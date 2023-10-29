@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Iniciar Sesión
+{% endblock title %}
+
+{% block content %}
+    <div class="container m-3">
+        <form class="form form-control-lg" method="post">
+            {% csrf_token %}
+            <div class="container m-3">
+                <h1>Iniciar Sesión</h1>
+            </div>
+            <div class="container m-3">
+            <table class="p-3">
+            {{form.as_table}}
+            </table>
+            </div>
+            <div class="container m-3">
+            <button type="submit" class="btn btn-dark">Login</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

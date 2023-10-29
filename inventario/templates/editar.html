@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Editar Producto
+{% endblock title %}
+
+{% block content %}
+    <div class="container sm m-3">
+        <form action="{% url 'editar' productos.id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <table class="table table-light table-bordeless">
+            <thead class="table table-dark text-center">
+                <tr>
+                    <th>Editar Producto</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{formulario.as_table}}
+            </tbody>    
+        </table>
+        <div class="container">
+            <button type="submit" class="btn btn-warning">Guardar Cambios</button>
+            <a href="{% url 'index' %}"><button type="submit" class="btn btn-danger">Regresar</button></a>
+        </div>
+        </form>
+    </div>
+{% endblock content %}
